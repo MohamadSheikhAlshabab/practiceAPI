@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+</head>
+<body>
+    <%data.forEach(val=>{%>
+        <section>
+
+            <h1><%=val.id%></h1>
+            <h3> <%=val.name%></h3>
+            <p><%=val.level%></p>
+            <img src="<%=val.img%>" alt="<%=val.img%>">
+        </section>
+        
+    <section>
+        <form action="/favorite/<%=val.id%>" method="GET">
+<input type="text" name="name" value="<%=val.name%>"> <br>
+<input type="text" name="img" value="<%=val.img%>"> <br>
+<input type="text" name="level" value="<%=val.level%>"> <br>
+
+
+<a href="/favorite/<%=val.id%>">add</a><br>
+</form>
+</section>
+    <%})%>
+</body>
+</html>
